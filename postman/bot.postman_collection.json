@@ -1,0 +1,42 @@
+{
+	"variables": [],
+	"info": {
+		"name": "bot",
+		"_postman_id": "f6be603c-1140-d576-45e7-17f6bc8865b4",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8000/bots",
+			"request": {
+				"url": "localhost:3000/bots",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/bots",
+			"request": {
+				"url": "localhost:3000/bots",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"bot\":{\r\n\t\t \"name\":\"robô\",\r\n\t\t \"botId\":\"2\"\r\n\t}\r\n}"
+				},
+				"description": "save new bot"
+			},
+			"response": []
+		}
+	]
+}
