@@ -78,23 +78,6 @@ module.exports = function (app) {
 
     content.mensagemEncontrada = messageDao.findById(req.params.id);
 
-    // let response = {
-    //   mensagem: content.mensagemEncontrada,
-    //   links: [
-    //     {
-    //       href: url + "messages/"
-    //         + content.message.conversationId,
-    //       rel: "Enviar Nova Mensagem",
-    //       method: "POST"
-    //     },
-    //     {
-    //       href: url + "messages/:conversationId/"
-    //         + content.message.conversationId,
-    //       rel: "Ver Histórico",
-    //       method: "GET"
-    //     }
-    //   ]
-    // };
 
     res.status(200).json(content.mensagemEncontrada);
   });
@@ -108,35 +91,12 @@ module.exports = function (app) {
     let messageDao = new app.persistence.MessageDao(connection);
     let id = req.query.id;
 
-    let conversation = messageDao.conversation(id);
-    res.status(500).send(conversation);
-
-  });
-
-  app.get('/messages/conversation/old/:id', function (req, res) {
-    var connection = app.persistence.connectionFactory();
-    var messageDao = new app.persistence.MessageDao(connection);
-
-    messageDao.findByConversationId(req.params.id).then(
-      result => {
-        console.log(result);
-        let response = {
-          history: result,
-          links: [
-            {
-              href: url + "mensagens/"
-                + req.params.id,
-              rel: "Enviar Nova Mensagem",
-              method: "POST"
-            }
-          ]
-        };
-
-        res.status(200).json(response);
-      }
-
-    ).catch(error => {
-      res.status(500).send('Erro ao buscar conversa ' + error);
+    connection.query('SELECT * from messages order by date', function (err, rows, fields) {
+      connection.end();
+      if (!err)
+        res.status(200).send(rows);
+      else
+        res.status(500).send('erro gerado ao listar mensagens: ' + err);
     });
 
   });

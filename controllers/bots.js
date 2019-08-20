@@ -1,10 +1,44 @@
 module.exports = function (app) {
+  const url = 'http://localhost:3000/';
+  app.get('/bot/:id', function (req, res) {
+    var id = req.params.id;
+    let connection = app.persistence.connectionFactory();
 
+    let response = {
+      history: result,
+      links: [
+        {
+          href: url + "bots/",
+          rel: "Listar bots",
+          method: "GET"
+        }
+      ]
+    };
+
+
+    connection.query('SELECT * from bots where botId = ' + id + ' order by date', function (err, rows, fields) {
+      connection.end();
+      if (!err) {
+        response.botsList = {};
+        response.botsList = rows;
+        res.status(200).json(response);
+      }
+      else
+        res.status(500).send('erro gerado ao listar bots: ' + err);
+    });
+
+  });
+  
   app.get('/bots', function (req, res) {
-    var connection = app.persistence.connectionFactory();
-    var botDao = new app.persistence.BotDao(connection);
+    let connection = app.persistence.connectionFactory();
 
-    botDao.list(req, res);
+    connection.query('SELECT * from bots order by date', function (err, rows, fields) {
+      connection.end();
+      if (!err)
+        res.status(200).send(rows);
+      else
+        res.status(500).send('erro gerado ao listar bots: ' + err);
+    });
 
   });
 
@@ -12,7 +46,7 @@ module.exports = function (app) {
 
     req.assert("bot.name",
       "Dê um nome para o seu Bot").notEmpty();
-    req.assert("bot.id",
+    req.assert("bot.botId",
       "Adicione um id ao seu bot")
       .notEmpty();
 
@@ -27,8 +61,8 @@ module.exports = function (app) {
     var bot = req.body["bot"];
     console.log('processando uma requisicao de um novo bot');
 
-    bot.status = 'CRIADO';
-    bot.data = new Date;
+    bot.status = '1';
+    bot.date = new Date;
 
     var connection = app.persistence.connectionFactory();
     var botDao = new app.persistence.BotDao(connection);
@@ -39,7 +73,7 @@ module.exports = function (app) {
         res.status(500).send(erro);
       } else {
         bot.botId = resultado.botId;
-        console.log('bot criado: '+ bot.botId);
+        console.log('bot criado: ' + bot.botId);
 
         res.status(201).json(bot);
       }
