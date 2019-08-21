@@ -1,0 +1,227 @@
+{
+	"variables": [],
+	"info": {
+		"name": "bots",
+		"_postman_id": "f6b884db-632b-faf8-a1bd-2d161f037b3a",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "novo bot",
+			"request": {
+				"url": "localhost:3000/bots",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"name\":\"bb8\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "listar bots",
+			"request": {
+				"url": "localhost:3000/bots",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "atualizar bot",
+			"request": {
+				"url": {
+					"raw": "localhost:3000/bots?id= 36b9f842-ee97-11e8-9443-0242ac120002",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bots"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": " 36b9f842-ee97-11e8-9443-0242ac120002",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"name\":\"bb8\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "buscar bot por id",
+			"request": {
+				"url": {
+					"raw": "localhost:3000/bots? id=36b9f842-ee97-11e8-9443-0242ac120002",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bots"
+					],
+					"query": [
+						{
+							"key": " id",
+							"value": "36b9f842-ee97-11e8-9443-0242ac120002",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "id",
+							"value": "36b9f842-ee97-11e8-9443-0242ac120002"
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "deletar bot",
+			"request": {
+				"url": {
+					"raw": "localhost:3000/bots? id=36b9f842-ee97-11e8-9443-0242ac120002",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bots"
+					],
+					"query": [
+						{
+							"key": " id",
+							"value": "36b9f842-ee97-11e8-9443-0242ac120002",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "id",
+							"value": "36b9f842-ee97-11e8-9443-0242ac120002"
+						}
+					],
+					"variable": []
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "buscar mensagem por id",
+			"request": {
+				"url": {
+					"raw": "localhost:3000/messages/?id=7665ada8-3448-4acd-a1b7-d688e68fe9a1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"messages",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "7665ada8-3448-4acd-a1b7-d688e68fe9a1",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "buscar conversa",
+			"request": {
+				"url": {
+					"raw": "localhost:3000/messages/?conversationId=7665ada8-3448-4acd-a1b7-d688e68fe9a1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"messages",
+						""
+					],
+					"query": [
+						{
+							"key": "conversationId",
+							"value": "7665ada8-3448-4acd-a1b7-d688e68fe9a1",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "nova mensagem",
+			"request": {
+				"url": "localhost:3000/messages",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"conversationId\": \"7665ada8-3448-4acd-a1b7-d688e68fe9a1\",\r\n \"timestamp\": \"2018-11-16T23:30:52.6917722Z\",\r\n \"from\": \"36b9f842-ee97-11e8-9443-0242ac120002\",\r\n \"to\": \"16edd3b3-3f75-40df-af07-2a3813a79ce9\",\r\n \"text\": \"Oi! Como posso te ajudar?\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
