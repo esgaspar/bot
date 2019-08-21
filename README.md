@@ -33,6 +33,5 @@ adicionar winston e morgan como ferramentas de log<br/>
 adicionar Swagger para documentar api<br/>
 adicionar Sequelize ORM para facilitar a migração e utilização de banco de dados.<br/>
 adicionar camada de services para controlar futuras regras de negócio<br/>
-adicionar camada de services para controlar futuras regras de negócio<br/>
 adicionar framework de testes mocha <br>
 adicionar framework de qualidade de código e coverage  istanbul<br><br>
