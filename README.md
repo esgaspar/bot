@@ -16,7 +16,7 @@ collections para o postman disponiveis na pasta postman na raiz do projeto
 &nbsp;&nbsp;
 
 
-<h6>Stack de desenvolvimento utilizada: <h6>&nbsp;&nbsp;
+<h6>Stack de desenvolvimento utilizada: </h6>&nbsp;&nbsp;
 Node.js + express + MongoDB
 &nbsp;&nbsp;
 stack escolhida para facilitar a escalabilidade e disponibilidade da aplicação visto possuirem flexibilidade em relação a utilização de hardware e possuirem tempo de resposta agil necessarias para a aplicação em questão.
@@ -30,9 +30,9 @@ Rest, utilizando camada de view(router), model e controller
 
 <h6>Melhorias sugeridas</h6>
 &nbsp;&nbsp;
-adicionar winston e morgan como ferramentas de log
+adicionar winston e morgan como ferramentas de log&nbsp;&nbsp;
 &nbsp;&nbsp;
-adicionar Swagger para documentar api
+adicionar Swagger para documentar api&nbsp;&nbsp;
 &nbsp;&nbsp;
 adicionar Sequelize ORM para facilitar a migração e utilização de banco de dados.
 &nbsp;&nbsp;
