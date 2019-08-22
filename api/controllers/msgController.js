@@ -9,7 +9,7 @@ exports.list_all_messages = function (req, res) {
     });
 };
 exports.find_conversation = function (req, res) {
-    Message.find({ conversationId: req.params.conversationId }, function (err, msg) {
+    Message.find({ conversationId: req.params.conversationid }, function (err, msg) {
         if (err)
             res.send(err);
         res.json(msg);

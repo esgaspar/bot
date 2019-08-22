@@ -16,8 +16,7 @@
 					{
 						"key": "Content-Type",
 						"value": "application/json",
-						"description": "",
-						"disabled": true
+						"description": ""
 					}
 				],
 				"body": {
@@ -42,25 +41,7 @@
 		{
 			"name": "atualizar bot",
 			"request": {
-				"url": {
-					"raw": "localhost:3000/bots?id= 36b9f842-ee97-11e8-9443-0242ac120002",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"bots"
-					],
-					"query": [
-						{
-							"key": "id",
-							"value": " 36b9f842-ee97-11e8-9443-0242ac120002",
-							"equals": true,
-							"description": ""
-						}
-					],
-					"variable": []
-				},
+				"url": "localhost:3000/bot/5d5df7db16c11a1f5017b9e9",
 				"method": "PUT",
 				"header": [
 					{
@@ -71,7 +52,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n \"name\":\"bb8\"\r\n}"
+					"raw": "{\r\n \"name\":\"r2d2\"\r\n}"
 				},
 				"description": ""
 			},
@@ -113,29 +94,7 @@
 		{
 			"name": "deletar bot",
 			"request": {
-				"url": {
-					"raw": "localhost:3000/bots? id=36b9f842-ee97-11e8-9443-0242ac120002",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"bots"
-					],
-					"query": [
-						{
-							"key": " id",
-							"value": "36b9f842-ee97-11e8-9443-0242ac120002",
-							"equals": true,
-							"description": ""
-						},
-						{
-							"key": "id",
-							"value": "36b9f842-ee97-11e8-9443-0242ac120002"
-						}
-					],
-					"variable": []
-				},
+				"url": "localhost:3000/bot/5d5de58adddf143018c28133",
 				"method": "DELETE",
 				"header": [],
 				"body": {},
@@ -146,26 +105,7 @@
 		{
 			"name": "buscar mensagem por id",
 			"request": {
-				"url": {
-					"raw": "localhost:3000/messages/?id=7665ada8-3448-4acd-a1b7-d688e68fe9a1",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"messages",
-						""
-					],
-					"query": [
-						{
-							"key": "id",
-							"value": "7665ada8-3448-4acd-a1b7-d688e68fe9a1",
-							"equals": true,
-							"description": ""
-						}
-					],
-					"variable": []
-				},
+				"url": "localhost:3000/messages/5d5df59c16c11a1f5017b9e7",
 				"method": "GET",
 				"header": [],
 				"body": {},
@@ -176,26 +116,7 @@
 		{
 			"name": "buscar conversa",
 			"request": {
-				"url": {
-					"raw": "localhost:3000/messages/?conversationId=7665ada8-3448-4acd-a1b7-d688e68fe9a1",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"messages",
-						""
-					],
-					"query": [
-						{
-							"key": "conversationId",
-							"value": "7665ada8-3448-4acd-a1b7-d688e68fe9a1",
-							"equals": true,
-							"description": ""
-						}
-					],
-					"variable": []
-				},
+				"url": "localhost:3000/messages/conversation/7665ada8-3448-4acd-a1b7-d688e68fe9a1",
 				"method": "GET",
 				"header": [],
 				"body": {},
